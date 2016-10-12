@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char font[] = "monospace:pixelsize=14";
 static int borderpx = 2;
 
 /*
@@ -84,25 +84,25 @@ static unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
-
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	"#073642", /*  0: base02  black    */
+	"#dc322f", /*  1: red     red      */
+	"#859900", /*  2: green   green    */
+	"#b58900", /*  3: yellow  yellow   */
+	"#268bd2", /*  4: blue    blue     */
+	"#d33682", /*  5: magenta magenta  */
+	"#2aa198", /*  6: cyan    cyan     */
+	"#eee8d5", /*  7: base2   white    */
+	"#002b36", /*  8: base03  brblack  */
+	"#cb4b16", /*  9: orange  brred    */
+	"#586e75", /* 10: base01  brgreen  */
+	"#657b83", /* 11: base00  bryellow */
+	"#839496", /* 12: base0   brblue   */
+	"#6c71c4", /* 13: violet  brmagenta*/
+	"#93a1a1", /* 14: base1   brcyan   */
+	"#fdf6e3", /* 15: base3   brwhite  */
+	// st remaps higher colors 9x/10x to 8-15
+	// so chalk grey (90) becomes 8
+	// http://wiki.bash-hackers.org/scripting/terminalcodes
 
 	[255] = 0,
 
@@ -116,10 +116,10 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-static unsigned int defaultfg = 7;
-static unsigned int defaultbg = 0;
-static unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+static unsigned int defaultfg = 11;
+static unsigned int defaultbg = 15;
+static unsigned int defaultcs = 0;
+static unsigned int defaultrcs = 5;
 
 /*
  * Default shape of cursor
